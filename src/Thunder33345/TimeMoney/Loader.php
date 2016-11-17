@@ -9,8 +9,10 @@ use Thunder33345\TimeMoney\Economy\InterfaceEconomyAPI;
 
 class Loader extends PluginBase
 {
+  public $players = [];
   /** @var  $economy EconomyInterface */
-  private $economy, $task;
+  private $economy;
+  private $task;
 
   public function onLoad()
   {
@@ -28,8 +30,7 @@ class Loader extends PluginBase
     }
     $this->economy = new InterfaceEconomyAPI($api);
     $this->task = new giveMoneyTask($this);
-    //$this->getServer()->getScheduler()->scheduleRepeatingTask($this->task, 1200);
-    $this->getServer()->getScheduler()->scheduleRepeatingTask($this->task, 20);
+    $this->getServer()->getScheduler()->scheduleRepeatingTask($this->task, 1200);
   }
 
   public function getEconomy()
@@ -44,7 +45,7 @@ class Loader extends PluginBase
     $config = [
       "time" => "5", // in min
       "grant" => "10", // how much
-      //"economy" => "EconomyAPI" //maybe will add
+      //"economy" => "EconomyAPI" //maybe will add soon
     ];
   }
 }
