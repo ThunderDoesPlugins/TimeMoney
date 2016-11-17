@@ -25,8 +25,6 @@ class giveMoneyTask extends PluginTask
 
   public function onRun($currentTick)
   {
-    print_r($this->players);
-
     foreach ($this->players as $key => $player)
       if (!$this->server->getPlayerExact($key) instanceof Player) unset($this->players[$key]);
 
