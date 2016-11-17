@@ -1,18 +1,5 @@
-name: BasePlugin
+name: TimeMoney
 version: 1.0.0
 api: [2.0.0]
 author: Thunder33345
-description:
-#main: Thunder33345\
-
-commands:
-  cmd:
-    permission: ""
-    usage: ""
-    permission: ""
-    alias: [cmd]
-
-permissions:
-  cmd:
-    default: true
-    description: ""
+main: Thunder33345\TimeMoney\Loader

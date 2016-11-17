@@ -14,7 +14,8 @@ class Loader extends PluginBase
 
   public function onLoad()
   {
-
+    if (!file_exists($this->getDataFolder())) mkdir($this->getDataFolder());
+    $this->saveDefaultConfig();
   }
 
   public function onEnable()
@@ -27,12 +28,8 @@ class Loader extends PluginBase
     }
     $this->economy = new InterfaceEconomyAPI($api);
     $this->task = new giveMoneyTask($this);
-    $this->getServer()->getScheduler()->scheduleDelayedRepeatingTask($this->task, 200, 1200);
-  }
-
-  public function onDisable()
-  {
-
+    //$this->getServer()->getScheduler()->scheduleRepeatingTask($this->task, 1200);
+    $this->getServer()->getScheduler()->scheduleRepeatingTask($this->task, 20);
   }
 
   public function getEconomy()
