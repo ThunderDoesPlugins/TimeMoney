@@ -1,5 +1,5 @@
 ---
 # Config
-time: 5
-grant: 10
+time: 5 #how often you want to give your players money (in min)
+grant: 10 # how much you want to give your players?
 ...
